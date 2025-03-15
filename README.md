@@ -26,16 +26,8 @@ This project uses `uv` for Python package management:
 # Install uv if you don't have it
 curl -sSf https://astral.sh/uv/install.sh | bash
 
-# Create a virtual environment
-uv venv
-
-# Activate the environment
-source .venv/bin/activate  # Linux/Mac
-# or
-.venv\Scripts\activate     # Windows
-
-# Install dependencies
-uv pip install -r requirements.txt
+# Sync the enviornment from uv.lock
+uv sync
 ```
 
 ### Using pip
