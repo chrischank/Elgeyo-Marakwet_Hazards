@@ -1,101 +1,137 @@
-# amini_SA
+# Climate Risk Profile for Elgeyo-Marakwet County, Kenya
 
-[![Powered by Kedro](https://img.shields.io/badge/powered_by-kedro-ffc900?logo=kedro)](https://kedro.org)
+This repository contains the code and data for a comprehensive climate risk profile at Admin 3 levels for Elgeyo-Marakwet County in Kenya.
 
-## Overview
+## Project Overview
 
-This is your new Kedro project, which was generated using `kedro 0.19.11`.
+This project focuses on developing an integrated climate risk profile for Elgeyo-Marakwet County in Kenya. The analysis includes:
 
-Take a look at the [Kedro documentation](https://docs.kedro.org) to get started.
+1. Drought hazard exposure analysis
+2. Flood hazard exposure analysis
+3. Land degradation assessment
+4. Integrated multi-hazard risk profiles at Admin 3 level
 
-## Rules and guidelines
+The analysis combines data from multiple sources, including:
+- IGAD Combined Drought Indicator (CDI) data
+- RCMRD Flood Physical Exposure data
+- GMES Land Degradation data for multiple seasons
 
-In order to get the best out of the template:
+## Visual Outputs
 
-* Don't remove any lines from the `.gitignore` file we provide
-* Make sure your results can be reproduced by following a data engineering convention
-* Don't commit data to your repository
-* Don't commit any credentials or your local configuration to your repository. Keep all your credentials and local configuration in `conf/local/`
+### County Boundary
 
-## How to install dependencies
+The project focuses on Elgeyo-Marakwet County, highlighted below:
 
-Declare any dependencies in `requirements.txt` for `pip` installation.
+![Elgeyo-Marakwet County Boundary](docs/figures/MCDI_plot.png)
 
-To install them, run:
+### Drought Risk Analysis
 
+The Mean Combined Drought Indicator (CDI) shows areas with higher drought risk in the county:
+
+![Mean Combined Drought Indicator](docs/figures/MCDI_plot.png)
+
+### Flood Risk Analysis
+
+The Flood Physical Exposure (FPE) map shows areas at risk of flooding:
+
+![Flood Physical Exposure](docs/figures/FPE_plot.png)
+
+### Land Degradation Analysis
+
+The project includes land degradation tracking across multiple seasons and analysis of change:
+
+![Land Degradation Changes](docs/figures/LDC_plots.png)
+
+![GMES Land Degradation Data](docs/figures/GMES_LD_plots.png)
+
+### Interactive Visualization
+
+An interactive Kepler.gl visualization is available in `docs/kepler.gl.html` for exploring the geospatial data in detail.
+
+## Environment Setup
+
+### Using uv (recommended)
+
+This project uses `uv` for Python package management:
+
+```bash
+# Install uv if you don't have it
+curl -sSf https://astral.sh/uv/install.sh | bash
+
+# Create a virtual environment
+uv venv
+
+# Activate the environment
+source .venv/bin/activate  # Linux/Mac
+# or
+.venv\Scripts\activate     # Windows
+
+# Install dependencies
+uv pip install -r requirements.txt
 ```
+
+### Using pip
+
+```bash
+# Create a virtual environment
+python -m venv .venv
+
+# Activate the environment
+source .venv/bin/activate  # Linux/Mac
+# or
+.venv\Scripts\activate     # Windows
+
+# Install dependencies
 pip install -r requirements.txt
 ```
 
-## How to run your Kedro pipeline
+## Project Structure
 
-You can run your Kedro project with:
+- `notebooks/`: Jupyter notebooks for exploratory data analysis and visualization
+- `data/`: Storage location for raw and processed data
+  - `01_raw/`: Raw input data from various sources
+  - `02_intermediate/`: Cleaned and pre-processed data
+  - `04_feature/`: Engineered features for analysis
+  - `07_model_output/`: Final outputs and analysis results
+- `src/`: Source code for the package
+- `docs/`: Documentation and visualization outputs
+  - `figures/`: Generated plots and visualizations
+  - `kepler.gl.html`: Interactive geospatial visualization
 
-```
-kedro run
-```
+## Data Sources
 
-## How to test your Kedro project
+- IGAD Region Monthly Combined Drought Indicator (CDI) 2024-2025
+- RCMRD Flood Physical Exposure data
+- GMES Land Degradation data for Kenya (2023-2024)
+- GADM Administrative Boundaries (v4.1)
 
-Have a look at the file `src/tests/test_run.py` for instructions on how to write your tests. You can run your tests as follows:
+## Analysis Workflow
 
-```
-pytest
-```
+1. **Data Collection**: Gathering data from various sources including Earth observation platforms
+2. **Data Processing**: Cleaning, harmonizing, and preprocessing the data
+3. **Feature Engineering**: Creating relevant indicators and metrics
+4. **Spatial Analysis**: Computing statistics for each Admin 3 region
+5. **Visualization**: Creating maps and plots to communicate findings
+6. **Risk Profiling**: Developing integrated risk profiles for each region
 
-You can configure the coverage threshold in your project's `pyproject.toml` file under the `[tool.coverage.report]` section.
+## Requirements
 
+This project requires Python 3.8+ and the following key libraries:
+- geopandas
+- rasterio
+- matplotlib
+- numpy
+- pandas
+- seaborn
+- earthengine-api
+- geemap
 
-## Project dependencies
+See `requirements.txt` for a complete list of dependencies.
 
-To see and update the dependency requirements for your project use `requirements.txt`. You can install the project requirements with `pip install -r requirements.txt`.
+## License
 
-[Further information about project dependencies](https://docs.kedro.org/en/stable/kedro_project_setup/dependencies.html#project-specific-dependencies)
+[MIT License](LICENSE)
 
-## How to work with Kedro and notebooks
+## Contact
 
-> Note: Using `kedro jupyter` or `kedro ipython` to run your notebook provides these variables in scope: `context`, 'session', `catalog`, and `pipelines`.
->
-> Jupyter, JupyterLab, and IPython are already included in the project requirements by default, so once you have run `pip install -r requirements.txt` you will not need to take any extra steps before you use them.
-
-### Jupyter
-To use Jupyter notebooks in your Kedro project, you need to install Jupyter:
-
-```
-pip install jupyter
-```
-
-After installing Jupyter, you can start a local notebook server:
-
-```
-kedro jupyter notebook
-```
-
-### JupyterLab
-To use JupyterLab, you need to install it:
-
-```
-pip install jupyterlab
-```
-
-You can also start JupyterLab:
-
-```
-kedro jupyter lab
-```
-
-### IPython
-And if you want to run an IPython session:
-
-```
-kedro ipython
-```
-
-### How to ignore notebook output cells in `git`
-To automatically strip out all output cell contents before committing to `git`, you can use tools like [`nbstripout`](https://github.com/kynan/nbstripout). For example, you can add a hook in `.git/config` with `nbstripout --install`. This will run `nbstripout` before anything is committed to `git`.
-
-> *Note:* Your output cells will be retained locally.
-
-## Package your Kedro project
-
-[Further information about building project documentation and packaging your project](https://docs.kedro.org/en/stable/tutorial/package_a_project.html)
+Maintainer: Christopher Chan
