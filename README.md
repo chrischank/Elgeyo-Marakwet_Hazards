@@ -16,38 +16,6 @@ The analysis combines data from multiple sources, including:
 - RCMRD Flood Physical Exposure data
 - GMES Land Degradation data for multiple seasons
 
-## Visual Outputs
-
-### County Boundary
-
-The project focuses on Elgeyo-Marakwet County, highlighted below:
-
-![Elgeyo-Marakwet County Boundary](docs/figures/MCDI_plot.png)
-
-### Drought Risk Analysis
-
-The Mean Combined Drought Indicator (CDI) shows areas with higher drought risk in the county:
-
-![Mean Combined Drought Indicator](docs/figures/MCDI_plot.png)
-
-### Flood Risk Analysis
-
-The Flood Physical Exposure (FPE) map shows areas at risk of flooding:
-
-![Flood Physical Exposure](docs/figures/FPE_plot.png)
-
-### Land Degradation Analysis
-
-The project includes land degradation tracking across multiple seasons and analysis of change:
-
-![Land Degradation Changes](docs/figures/LDC_plots.png)
-
-![GMES Land Degradation Data](docs/figures/GMES_LD_plots.png)
-
-### Interactive Visualization
-
-An interactive Kepler.gl visualization is available in `docs/kepler.gl.html` for exploring the geospatial data in detail.
-
 ## Environment Setup
 
 ### Using uv (recommended)
@@ -58,16 +26,8 @@ This project uses `uv` for Python package management:
 # Install uv if you don't have it
 curl -sSf https://astral.sh/uv/install.sh | bash
 
-# Create a virtual environment
-uv venv
-
-# Activate the environment
-source .venv/bin/activate  # Linux/Mac
-# or
-.venv\Scripts\activate     # Windows
-
-# Install dependencies
-uv pip install -r requirements.txt
+# Sync the enviornment from uv.lock
+uv sync
 ```
 
 ### Using pip
@@ -127,6 +87,32 @@ This project requires Python 3.8+ and the following key libraries:
 - geemap
 
 See `requirements.txt` for a complete list of dependencies.
+
+## Visual Outputs
+
+### Drought Risk Analysis
+
+The Mean Combined Drought Indicator (CDI) shows areas with higher drought risk in the county:
+
+![Mean Combined Drought Indicator](docs/figures/MCDI_plot.png)
+
+### Flood Risk Analysis
+
+The Flood Physical Exposure (FPE) map shows areas at risk of flooding:
+
+![Flood Physical Exposure](docs/figures/FPE_plot.png)
+
+### Land Degradation Analysis
+
+The project includes land degradation tracking across multiple seasons and analysis of change:
+
+![Land Degradation Changes](docs/figures/LDC_plots.png)
+
+![GMES Land Degradation Data](docs/figures/GMES_LD_plots.png)
+
+### Interactive Visualization
+
+An interactive Kepler.gl visualization is available in `docs/kepler.gl.html` for exploring the geospatial data in detail.
 
 ## License
 
