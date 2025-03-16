@@ -132,7 +132,7 @@ The final output [dataset](data/07_model_output/EMC_LV3Hazard.parquet) for sub-c
 
 ## License
 
-[MIT License](LICENSE)
+[BSD 3-Clause Clear License](LICENSE)
 
 ## Contact
 
