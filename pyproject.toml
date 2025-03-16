@@ -23,6 +23,7 @@ dependencies = [
     "earthengine-api>=1.5.6",
     "geemap>=0.35.3",
     "pyarrow>=19.0.1",
+    "contextily>=1.6.2",
 ]
 
 [project.scripts]

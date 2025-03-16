@@ -110,6 +110,12 @@ The project includes land degradation tracking across multiple seasons and analy
 
 ![GMES Land Degradation Data](docs/figures/GMES_LD_plots.png)
 
+### Multiple Hazard Profiles
+
+The integrated hazard profiles combining drought, flood, and land degradation risks for Elgeyo-Marakwet County:
+
+![Elgeyo-Marakwet Hazard Profiles](docs/figures/EMC_hazard_profiles.png)
+
 ### Interactive Visualization
 
 An interactive Kepler.gl visualization is available in `docs/kepler.gl.html` for exploring the geospatial data in detail.
