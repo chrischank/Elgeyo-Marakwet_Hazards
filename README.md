@@ -106,9 +106,11 @@ The Flood Physical Exposure (FPE) map shows areas at risk of flooding:
 
 The project includes land degradation tracking across multiple seasons and analysis of change:
 
-![Land Degradation Changes](docs/figures/LDC_plots.png)
-
 ![GMES Land Degradation Data](docs/figures/GMES_LD_plots.png)
+
+#### Land Degradation Change
+
+![Land Degradation Changes](docs/figures/LDC_plots.png)
 
 ### Multiple Hazard Profiles
 
@@ -119,6 +121,14 @@ The integrated hazard profiles combining drought, flood, and land degradation ri
 ### Interactive Visualization
 
 An interactive Kepler.gl visualization is available in `docs/kepler.gl.html` for exploring the geospatial data in detail.
+
+#### Slides, Notebook and Data output
+
+Slides are available at [Google Slides](https://docs.google.com/presentation/d/18Y88c6S9fZH-Etrs4yRc3RaHTByMbYHH8PejWdksxqo/edit?usp=sharing)
+
+The [Exploratory Data Analysis notebook](notebooks/EDA.ipynb) is purposely verbose for reproducibility, you might need GEE authentication
+
+The final output [dataset](data/07_model_output/EMC_LV3Hazard.parquet) for sub-county level of Elgeyo-Marakwet County is compressed in a parquet format
 
 ## License
 
