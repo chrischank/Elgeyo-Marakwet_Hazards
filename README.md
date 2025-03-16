@@ -2,6 +2,15 @@
 
 This repository contains the code and data for a comprehensive climate risk profile at Admin 3 levels for Elgeyo-Marakwet County in Kenya.
 
+## Takeaway
+- Sengwer runs the highest risk of drought averaged yearly and also saw some of the highest variation in land degradation improvements and loss
+
+- Flood Hazard runs along the east coast of the county, especially in Endo, Emsoo and Tambach. They are also particularly vulnerable to land degradation as they saw high deterioration change but very modest to no improvements. Endo have moderate drought risk
+
+- Only sub-county that saw consistent LD improvement is Molben/Kuserwo. The Horn of Kamarlny also shows high variation in LD imrpovemnts and loss, there’s strange pattern in the raster worth exploring further
+
+- Priorities of risk mitigation should be placed on Endo, where multiple risks are presents, target address for Emsoo and Tabach for flood risk on the eastern border, and significant drought risk in Sengwer
+
 ## Project Overview
 
 This project focuses on developing an integrated climate risk profile for Elgeyo-Marakwet County in Kenya. The analysis includes:
